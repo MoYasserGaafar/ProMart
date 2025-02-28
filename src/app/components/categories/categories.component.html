@@ -1,0 +1,16 @@
+<div class="container my-5">
+    <div class="row">
+        @for (category of allCategories; track $index) {
+        <!-- Looping through a list named <allCategories> where <category> represents each item within the <allCategories> list during each iteration of the loop -->
+        <!-- <track $index>: Keeps track of the current index for each iteration -->
+            <div class="col-md-2">
+                <div class="category m-2 p-2">
+                    <img [src]="category.image" width="160px" height="150px" alt="">
+                    <!-- Dynamically sets the image source using property binding -->
+                    <h6 class="fw-bold text-center mt-2">{{category.name}}</h6>
+                    <!-- Text interpolation is used to display the <category.name> property of the current category in the loop -->
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel'; 
+//Imports the main stylesheet for the <ngx-owl-carousel-o> library.
+//It contains the base styles for the carousel component, such as its overall layout, structure, and default appearance.
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+//Imports the default theme stylesheet for the <ngx-owl-carousel-o> library. 
+//It contains the specific styling for the carousel's navigation dots, navigation arrows, and other elements, based on the default theme.
+@import 'ngx-toastr/toastr';
+//Imports the default theme stylesheet for the <ngx-toastr> library. 
+//It applies the styles defined by the library to the toast notifications that it creates.
+
+:root {
+    --main-color: #FA7500;
+    --light-color: #ECE9F1;
+    --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px, rgba(145,158,171,.14) 0px 4px 5px 0px;
+    --font-family: 'Encode Sans Expanded', sans-serif;
+    --rating-color: #ffc908;
+}
+
+body {
+    font-family: var(--font-family) !important;
+}
+
+.rating-color {
+    color: var(--rating-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a, a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.product:hover {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.category, .brand {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--light-color);
+    border-radius: 10px;
+}
+
+.category:hover, .brand:hover {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.category-slider {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--light-color);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.category-slider:hover {
+    box-shadow: var(--shadow);
+    border: solid 2px var(--main-color);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+.product .btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover .btn {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.bg-main {
+    background-color: var(--main-color) !important;
+}
+
+.navbar-active {
+    background-color: var(--main-color) !important;
+    color: #fff !important;
+    border-radius: 8px;
+}
+
+.bg-main-light {
+    background-color: var(--light-color) !important;
+}
+
+.main-border {
+    border: 1px solid var(--main-color);
+}
+
+.topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FA7500;
+    color:#fff;
+    z-index: 99;
+}
+
+.topBtn:hover {
+    background-color: #ff5d00;
+    color:#fff;
+}
+
+//Selector targets the scrollbar itself
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+//Selector targets the draggable thumb part of the scrollbar
+::-webkit-scrollbar-thumb {
+    background-color: #FA7500;
+    border-radius: 20px;
+}
+
+//Selector targets the track of the scrollbar, which is the area behind the thumb
+::-webkit-scrollbar-track {
+    background-color: #f0f3f2;
+}

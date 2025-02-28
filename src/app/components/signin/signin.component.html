@@ -1,0 +1,28 @@
+<div class="w-75 m-auto my-5">
+    <h2>Log In to ProMart!</h2>
+    <form [formGroup]="login" (ngSubmit)="sendData()">
+    <!--
+    <[formGroup]="login">: This Binds the form to a FormGroup named login in the component.
+    <(ngSubmit)="sendData()">: Attaches an event listener to the form's <submit> event. When the form is submitted, the <sendData()> function will be called.    
+    -->
+
+        <input formControlName="email" type="email" class="form-control my-3" placeholder="Please enter your email">
+
+        <app-alert-error [formName]="login" controlName="email" />
+
+        <input formControlName="password" type="password" class="form-control my-3"
+            placeholder="Please enter your password">
+
+        <app-alert-error [formName]="login" controlName="password" />
+
+        <div class="text-danger my-3">{{errorMessage}}</div>
+
+        <div class="d-flex justify-content-between">
+            <button class="btn bg-main text-white" [disabled]="login.invalid">Log In</button>
+            <!-- Button will be disabled if the <register> form is invalid, preventing the user from submitting the form until all required fields are valid and any validation rules are met -->
+
+            <a routerLink="/forgotPassword" class="link-primary">Forgot my Password</a>
+            <!-- Creates a clickable link that, when clicked, will navigate the user to the </forgotPassword> route.-->
+        </div>
+    </form>
+</div>

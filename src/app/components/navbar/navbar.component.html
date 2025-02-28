@@ -1,0 +1,96 @@
+<!-- Bootstrap's Navbar >> Main Navbar -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary py-1">
+    <!-- <navbar-expand-lg>: Sets the navbar to collapse into a menu button on smaller screens -->
+    <!-- <bg-body-tertiary>: Applies a background color based on the Bootstrap theme -->
+    <div class="container">
+        <a class="navbar-brand" routerLink="/">
+        <!-- <routerLink>: Navigate to the root path when the link is clicked-->
+            <img src="assets/images/promart-logo.png">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Defines a button that toggles the collapse of the navbar menu on smaller screens and sets attributes for collapsing and expanding the navbar -->
+            <!-- Defines a collapsible div element for the navbar menu and sets an ID for the element to be referenced -->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+                <!-- <me-auto>: Aligns the menu items to the left -->
+                <!-- <mb-2 mb-lg-0>: Sets margins for the menu on small and large screens -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="navbar-active">{{"navbar.home"|translate}}</a>
+                    <!-- <{{"navbar.home"|translate}}>: Used to translate the text <navbar.home> using a translation service which allows for dynamic language switching -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/categories" routerLinkActive="navbar-active">{{"navbar.categories"|translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/brands" routerLinkActive="navbar-active">{{"navbar.brands"|translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/products" routerLinkActive="navbar-active">{{"navbar.products"|translate}}</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+            <!-- <ms-auto>: Aligns the menu items to the right -->
+            <!-- <mb-2 mb-lg-0>: Sets margins for the menu on small and large screens -->
+                <!-- Language Nav Item -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-language"></i> <!-- Fontawesome's Language Icon -->
+                        {{'navbar.language'|translate}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a [class.bg-main]="_TranslateService.currentLang=='en'" [class.text-white]="_TranslateService.currentLang=='en'" 
+                            (click)="selectLang('en')" class="dropdown-item" href="#">English</a>
+                        </li>
+                        <!-- <(click)="selectLang('en')">: Event binding that triggers the <selectLang> method when the link is clicked, then the <en> string is passed as an argument to the method -->
+                        <li>
+                            <a [class.bg-main]="_TranslateService.currentLang=='ar'" [class.text-white]="_TranslateService.currentLang=='ar'" 
+                            (click)="selectLang('ar')" class="dropdown-item" href="#">العربية</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <!-- Wishlist Nav Item -->
+                <li class="nav-item">
+                    <a class="nav-link position-relative" routerLink="/wishlist" routerLinkActive="navbar-active">{{"navbar.wishlist"|translate}}
+                        <i class="fa-regular fa-heart"></i> <!-- Fontawesome's Wishlist Icon -->
+                        <!-- Bootstrap's Badge -->
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{whishListCounter}}
+                        </span>
+                    </a>
+                </li>
+
+                <!-- Cart Nav Item -->
+                <li class="nav-item">
+                    <a class="nav-link position-relative" routerLink="/cart" routerLinkActive="navbar-active">{{"navbar.cart"|translate}}
+                        <i class="fa-solid fa-cart-shopping"></i> <!-- Fontawesome's Cart Shopping Icon -->
+                        <!-- Bootstrap's Badge -->
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            {{cartCounter}}
+                            <!-- Text interpolation which displays the value of the counter variable within the badge -->
+                        </span>
+                    </a>
+                </li>
+
+                <!-- Orders Nav Item -->
+                <li class="nav-item">
+                    <a class="nav-link position-relative" routerLink="/orders" routerLinkActive="navbar-active">{{"navbar.orders"|translate}}
+                        <i class="fa-solid fa-clock-rotate-left"></i> <!-- Fontawesome's Clock Rotate Left Icon -->
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" (click)="logout()" routerLinkActive="navbar-active">{{"navbar.logout"|translate}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,14 @@
+<div class="container my-5">
+    <h2>Shipping Address:</h2>
+    
+    <!-- =====> <address> FormGroup <===== -->
+    <form [formGroup]="address" (ngSubmit)="payment()">
+        <h5>Address:</h5>
+        <textarea formControlName="details" class="form-control my-3" placeholder="Please enter your address in detail"></textarea>
+        <h5>Phone:</h5>
+        <input formControlName="phone" type="tel" class="form-control my-3" placeholder="Please enter your phone number">
+        <h5>City:</h5>
+        <input formControlName="city" type="text" class="form-control my-3" placeholder="Please enter your city">
+        <button class="btn bg-main text-white my-2">Pay</button>
+    </form>
+</div>

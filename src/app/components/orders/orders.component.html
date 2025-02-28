@@ -1,0 +1,36 @@
+<div class="container bg-main-light my-5 p-4 rounded-4">
+    <h2>Shop Orders</h2>
+
+    @for (order of orders; track $index) {
+    <!-- Looping through a list named <orders> where <order> represents each item within the <orders> list during each iteration of the loop -->
+    <!-- <track $index>: Keeps track of the current index for each iteration -->
+        <div class="row mb-1 border-bottom">
+            <div class="col-md-3 -flex justify-content-between align-items-center">
+                <div class="p-2">
+                    <p class="text-main fw-bold">{{order.user.name}}</p> <!-- Text interpolation -->
+                    <p class="font-sm"><span class="text-main">Order ID :</span> {{order._id}}</p> <!-- Text interpolation -->                    
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-between align-items-center">
+                <div class="p-2">
+                    <p><span class="text-main">Email :</span> {{order.user.email}}</p> <!-- Text interpolation -->
+                    <p><span class="text-main">Phone :</span> {{order.user.phone}}</p> <!-- Text interpolation -->
+                    <p><span class="text-main">Address :</span> {{order.shippingAddress?.city || ""}}</p> <!-- Text interpolation -->
+                </div>
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-between align-items-center">
+                <div class="p-2">
+                    <p><span class="text-main">Date :</span>{{order.createdAt|date}}</p> <!-- Text interpolation -->
+                    <p><span class="text-main">Price :</span> {{order.totalOrderPrice|currency:'EGP'}}</p> <!-- Text interpolation -->
+                </div>
+
+                <div class="col-md-3 d-flex justify-content-between align-items-center">
+                    <p class=" text-main"><span class="text-main">Payment Method :</span> {{order.paymentMethodType}}</p> <!-- Text interpolation -->
+                </div>
+            </div>
+    
+        </div>
+        }
+</div>

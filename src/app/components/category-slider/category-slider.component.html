@@ -1,0 +1,32 @@
+<div class="my-5">
+    <h4 class="fw-bold m-2">{{"category-slider.header"|translate}}</h4>
+
+    <!-- npm >> <ngx-owl-carousel-o> Package >> <customOptions> -->
+    <owl-carousel-o [options]="customOptions">
+    <!-- Custom component selector that references <an owl-carousel-o> component from the <ngx-owl-carousel> library, which is used to create a carousel or slider element on the webpage -->
+    <!-- <[options]="customOptions">: Passes an object named <customOptions> to the <owl-carousel-o component>. This object likely contains configuration settings for the carousel, such as the number of visible slides, autoplay interval, navigation controls, and more -->
+
+        <!-- Loops through an array or observable named <slidesStore> that contains data representing the individual slides to be displayed in the carousel -->
+        @for(slide of categories; track $index) {
+        <ng-container>
+            <ng-template carouselSlide [id]="slide._id">
+            <!-- Creates a template for each slide using the <ng-template> directive and the <carouselSlide> structural directive -->
+            <!-- <[id]>: Attribute which dynamically sets the <ID> of the template to the id property of the current <slide> object -->
+                <!--
+                <img [src]="slide.image" [alt]="slide.name" [title]="slide.name" height="200px">
+                <h6 class="my-3 text-main">{{slide.name}}</h6>
+                -->
+                <div class="p-2">
+                    <div class="category-slider">
+                        <img [src]="slide.image" [alt]="slide.name" [title]="slide.name" height="200px">
+                        <!-- Renders an image element within the slide template -->
+                    </div>
+                    
+                    <h6 class="fw-bold text-center mt-2">{{slide.name}}</h6>
+                    <!-- Renders heading with the category's name based on the data provided in the <categories> array -->
+                </div>
+            </ng-template>
+        </ng-container>
+        }
+    </owl-carousel-o>
+</div>

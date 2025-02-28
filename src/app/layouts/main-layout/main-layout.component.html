@@ -1,0 +1,12 @@
+<!-- Primary layout for the application, displaying components used across various pages -->
+
+<app-navbar></app-navbar>
+<!-- Navbar Selector -->
+
+<router-outlet></router-outlet>
+<!-- Directive that defines a placeholder in the template where the router will dynamically insert the component that corresponds to the currently active route -->
+
+@if (showBtn) {
+    <button (click)="scrollTop()" class="btn topBtn"><i class="fa-solid fa-angle-up"></i></button>
+    <!-- Defines a button with an upward-pointing arrow icon. When clicked, it scrolls the page to the top baecuse of event binding that calls the <scrollTop()> function -->
+}

@@ -1,0 +1,31 @@
+{
+    "auth-navbar": {
+        "": ""
+    },
+
+    "navbar": {
+        "home": "Home",
+        "categories": "Categories",
+        "brands": "Brands",
+        "products": "Products",
+        "language": "English",
+        "wishlist": "Wishlist",
+        "cart": "Cart",
+        "orders": "Orders",
+        "logout": "Log Out"
+    },
+
+    "category-slider": {
+        "header": "Shop Popular Categories"
+    },
+
+    "footer": {
+        "header": "Get the ProMart App Now!",
+        "paragraph": "We will send you a link, open it on your phone to download the app.",
+        "button": "Share App Link",
+        "payment": "Payment Partners",
+        "delivery": "Get Deliveries with ProMart",
+        "copyrights": "© 2025 ProMart. All Rights Reserved. Powered by",
+        "social": "Follow us on"
+    }
+}
