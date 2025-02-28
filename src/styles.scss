@@ -138,6 +138,18 @@ a, a:hover {
     width: 10px;
 }
 
+//change the inner bullet color when selected
+.form-check-input:checked {
+    background-color: #FA7500;
+    border-color: #FA7500;
+    box-shadow: none;
+}
+
+.form-check-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 //Selector targets the draggable thumb part of the scrollbar
 ::-webkit-scrollbar-thumb {
     background-color: #FA7500;

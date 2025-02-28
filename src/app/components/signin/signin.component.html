@@ -6,6 +6,18 @@
     <(ngSubmit)="sendData()">: Attaches an event listener to the form's <submit> event. When the form is submitted, the <sendData()> function will be called.    
     -->
 
+        <!-- Role Selection -->
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="customer" value="customer" formControlName="role">
+                <label class="form-check-label" for="customer">Customer</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="admin" value="admin" formControlName="role">
+                <label class="form-check-label" for="admin">Admin</label>
+            </div>
+        </div>
+
         <input formControlName="email" type="email" class="form-control my-3" placeholder="Please enter your email">
 
         <app-alert-error [formName]="login" controlName="email" />

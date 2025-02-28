@@ -29,7 +29,8 @@ export class SigninComponent {
   //Form builder which defines multiple form controls for user information, each with an initial value and a corresponding validator.
   login: FormGroup = this._FormBuilder.group({
     email: [null, signupValidators.email],
-    password: [null, signupValidators.password]
+    password: [null, signupValidators.password],
+    role: ['customer'] //Default to customer
   })
   //Applies a custom <confirmPassword> validator to the entire <FormGroup> to ensure password and confirm password fields match.
 
@@ -45,14 +46,19 @@ export class SigninComponent {
           //Callback function that handle the successful response from the <signup> method.
 
           if (res.message == "success") {
-            console.log('res ===>' , res)
             localStorage.setItem('token', res.token)
             //Stores the <res.token> value in the browser's local storage under the key <'token'>.
             //Allows the application to persist the authentication token across page reloads or browser sessions, enabling the user to remain logged in without having to re-authenticate.
             this._AuthService.saveUserData()
             //Calls the <saveUserData> method on the injected <_AuthService> service.
             //Navigate to <home>.
-            this._Router.navigate(['/home'])
+            //this._Router.navigate(['/home'])
+            //Navigate based on role
+            if (this.login.value.role === 'admin') {
+              this._Router.navigate(['/admin/dashboard']);
+            } else {
+              this._Router.navigate(['/home']);
+            }
           }
         }, error: (err: HttpErrorResponse) => {
           //Callback function that handle an error response from the <signup> method.
