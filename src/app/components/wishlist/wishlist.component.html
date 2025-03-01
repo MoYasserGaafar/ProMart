@@ -5,25 +5,19 @@
                 <div>
                     <h2>Shop Wishlist</h2>
                     <span>Items: {{wishlist.count}}</span>
-                    <!-- Displays the number of items in the wishlist using property binding -->
                 </div>
             </div>
         
             @for(product of wishlist.data; track $index) {
-            <!-- Iterates over <wishlist.data> array and track changes using the current index -->
                 <div class="row border-bottom my-2 py-2">
                     <div class="col-md-1">
                         <img [src]="product.imageCover" class="w-100" alt="">
-                        <!-- Displays the product image using property binding -->
                     </div>
                     <div class="col-md-11 d-flex justify-content-between">
                         <div>
                             <h4>{{product.title}}</h4>
-                            <!-- Displays the product title using property binding-->
                             <p class="text-main">Price: {{product.price}} EGP</p>
-                            <!-- Displays the product price using property binding-->
                             <button (click)="removeItem(product._id)" class="btn"><i class="fa-solid fa-trash-can text-main"></i> Remove </button> <!-- Fontawesome's Trash Icon -->
-                            <!-- Defines a button that, when clicked, will call the <deleteItem> function with the product ID as an argument -->
                         </div>
 
                         <div>

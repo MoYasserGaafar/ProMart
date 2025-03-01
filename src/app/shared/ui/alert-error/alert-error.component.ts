@@ -11,7 +11,5 @@ import { FormGroup } from '@angular/forms';
 
 export class AlertErrorComponent {
   @Input() formName!:FormGroup
-  //Allows the component to receive a <FormGroup> instance as an input from its parent component.
   @Input() controlName!:string
-  //Allows the component to receive a string value as an input from its parent component.
 }

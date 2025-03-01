@@ -1,22 +1,16 @@
 <!-- Bootstrap's Navbar >> Authentication Navbar -->
 
 <nav class="navbar navbar-expand-lg bg-body-white" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-<!-- <navbar-expand-lg>: Sets the navbar to collapse into a menu button on smaller screens -->
-<!-- <bg-body-tertiary>: Applies a background color based on the Bootstrap theme -->
     <div class="container">
         <a class="navbar-brand" routerLink="/">
             <img src="assets/images/promart-logo.png">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <!-- Defines a button that toggles the collapse of the navbar menu on smaller screens and sets attributes for collapsing and expanding the navbar -->
-        <!-- Defines a collapsible div element for the navbar menu and sets an ID for the element to be referenced -->
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <!-- <ms-auto>: Aligns the menu items to the right -->
-            <!-- <mb-2 mb-lg-0>: Sets margins for the menu on small and large screens -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-language"></i> <!-- Fontawesome's Language Icon-->
@@ -27,7 +21,6 @@
                             <a [class.bg-main]="_TranslateService.currentLang=='en'" [class.text-white]="_TranslateService.currentLang=='en'" 
                             (click)="selectLang('en')" class="dropdown-item" href="#">English</a>
                         </li>
-                        <!-- <(click)="selectLang('en')">: Event binding that triggers the <selectLang> method when the link is clicked, then the <en> string is passed as an argument to the method -->
                         <li>
                             <a [class.bg-main]="_TranslateService.currentLang=='ar'" [class.text-white]="_TranslateService.currentLang=='ar'" 
                             (click)="selectLang('ar')" class="dropdown-item" href="#">العربية</a>

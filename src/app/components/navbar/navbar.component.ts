@@ -15,6 +15,8 @@ import { WishlistService } from '../../core/services/wishlist.service';
 })
 
 export class NavbarComponent {
+  constructor(private router: Router) {}
+  
   private readonly _TranslationService = inject(TranslationService)
   //Injects the <TranslationService> service into the current class and stores it in a private and readonly property named <_TranslationService>.
   readonly _TranslateService = inject(TranslateService)
@@ -31,6 +33,10 @@ export class NavbarComponent {
   private readonly _Router = inject(Router)
   private readonly _AuthService = inject(AuthService)
   
+  get isAdminDashboard(): boolean {
+    return this.router.url.includes('admin-dashboard');
+  }
+
   //Get Cart counter when relaoding Home page
   getLoggedUserCart = () => {
     this._CartService.getLoggedUserCart().subscribe({

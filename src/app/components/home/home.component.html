@@ -1,49 +1,28 @@
 <app-slider></app-slider>
-<!-- Custom component selector references to <app-slider> component -->
 <app-category-slider></app-category-slider>
 
 <div class="container my-5">
     <input [(ngModel)]="term" type="text" class="form-control w-75 m-auto my-5" placeholder="Search for Products" >
-    <!--
-    Defines a text input element that is bound to the <term> property of the component. 
-    The <input> element allows the user to enter a search term, and the term property will be updated accordingly. 
-    This can be used to implement search functionality in the application, where the term property can be used to filter data or make API calls to search for products based on the user's input.
-    -->
     <div class="row">
         @for (product of allProducts|search: term; track $index) {
-        <!-- Iterate through the <allProducts> array and track products using the current index -->
         <div class="col-md-2">
-        <!-- Creates a grid layout with two columns per row on medium screens and adjusts for other screen sizes -->
             <div class="product p-2">
-                <!-- <div (click)="navigateProductDetails(product)"> -->
                 <div [routerLink]="'/details/'+product._id">
-                <!-- Defines a link that, when clicked, will navigate to a route with the path </details/{product._id}>, where <{product._id}> is replaced with the product's ID -->
                     <img [src]="product.imageCover" class="w-100" alt="">
-                    <!-- Binds the image source dynamically using Angular's property binding -->
-                    <!-- Setting the source to the <imageCover> property of the current product in the loop -->
-                    <h6 class="text-main mt-2">{{product.category.name|uppercase}}</h6> <!-- Uppercase Built-In Pipe -->
-                    <!-- Text interpolation is used to display the <product.category.name> property of the current product in the loop -->
-                    <h5 class="fw-bold">{{product.title.split(' ').slice(0,2).join(' ')|titlecase}}...</h5> <!-- Titlecase Built-In Pipe -->
-                    <!-- Text interpolation is used to display the <product.title> property of the current product in the loop -->
-                    <!-- <ptoduct.title> is splitted into an array of words, then the first two words of the split array are taken to be joined back with spaces -->
+                    <h6 class="text-main mt-2">{{product.category.name|uppercase}}</h6> 
+                    <h5 class="fw-bold">{{product.title.split(' ').slice(0,2).join(' ')|titlecase}}...</h5> 
                     <div class="d-flex justify-content-between">
-                        <!-- Creates a flexbox container element with classes for horizontal alignment and space-between justification -->
-                        <span>{{product.price|currency:'EGP'}}</span> <!-- Currency Built-In Pipe of option EGP -->
-                        <!-- Text interpolation is used to display the <product.price> property of the current product in the loop -->
+                        <span>{{product.price|currency:'EGP'}}</span> 
                         <span>
                             <i class="fa-solid fa-star rating-color"></i> <!-- Fontawesome's Star Icon -->
                             {{product.ratingsAverage}}
-                            <!-- Text interpolation is used to display the <product.ratingsAverage> property of the current product in the loop -->
                         </span>
                     </div>
-                    <p>{{product.createdAt|date:'short'}}</p> <!-- Date Built-In Pipe of option short -->
-                    <!-- Text interpolation is used to display the <product.ceatedAt> property of the current product in the loop -->
-                    <p class="text-danger my-3">{{product.quantity|soldOut:50}}</p> <!-- Sold Out Custom Pipe -->
-                    <!-- Text interpolation is used to display the <product.quantity> property of the current product in the loop -->
+                    <p>{{product.createdAt|date:'short'}}</p> 
+                    <p class="text-danger my-3">{{product.quantity|soldOut:50}}</p> 
                 </div>
                 <div class="d-flex justify-content-center align-items-center gap-2">
                     <button (click)="addToCart(product._id)" class="btn bg-main text-white w-100 my-2"><i class="fa-solid fa-cart-plus"></i></button>
-                    <!-- Defines a button that, when clicked, will call the <addToCart> function with the value of the <product._id> as an argument -->
                     
                     @if (!wishlistData.includes(product._id)) {
                     <button (click)="addToWishlist(product._id)" class="btn text-main">
@@ -55,7 +34,6 @@
                             <i class="fa-solid fa-heart fa-2x"></i>
                         </button>
                     }
-                    <!-- Dynamically renders either an "Add to Wishlist" or "Remove from Wishlist" button based on the product's current status in the user's wishlist -->
                 </div>
 
             </div>

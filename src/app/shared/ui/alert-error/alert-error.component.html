@@ -1,9 +1,6 @@
 @if (formName.get(controlName)?.errors && formName.get(controlName)?.touched) {
-<!-- Custom directive used for conditional rendering that checks if the form control has errors and if it has been touched -->
-<!-- <?.>: Null safety operator eliminates the need for explicit null checks before each property access or method call -->
 <div class="alert alert-danger">
-    <ul class="m-0"> <!-- Unordered list to display error messages -->
-        <!-- Custom directives used for conditional rendering that checks if the form control has specific error -->
+    <ul class="m-0"> 
         @if(formName.get(controlName)?.getError('required')){
         <li>Input is required.</li>
         }
@@ -23,7 +20,6 @@
     </ul>
 </div>
 }@else if(formName.getError('mismatch') && formName.get(controlName)?.touched&&controlName=="rePassword"){
-<!-- Custom directive used for conditional rendering that checks if there is an error named <mismatch> and if the <controlName> is <rePassword> -->
 <div class="alert alert-danger">
     <ul class="m-0">
         <li>Please enter a password that matches the pattern.</li>

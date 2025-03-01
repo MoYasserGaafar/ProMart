@@ -1,102 +1,28 @@
 <div class="w-75 m-auto my-5">
     <h2>Register for ProMart!</h2>
     <form [formGroup]="register" (ngSubmit)="sendData()">
-    <!--
-    <[formGroup]="register">: This Binds the form to a FormGroup named register in the component.
-    <(ngSubmit)="sendData()">: Attaches an event listener to the form's <submit> event. When the form is submitted, the <sendData()> function will be called.    
-    -->
         <input [ngClass]="{
             'is-valid': !register.get('name')?.errors&&(register.get('name')?.touched||register.get('name')?.dirty),
             'is-invalid': register.get('name')?.errors&&(register.get('name')?.touched||register.get('name')?.dirty)
         }" formControlName="name" type="text" class="form-control my-3 is-valid" placeholder="Please enter your name">
-        <!-- <[ngClass]>: Directive which  adds and removes CSS classes on an HTML element -->
-        <!-- Checks if the <name> form control has no errors and if it has been touched or is dirty -->
-        <!-- <input formControlName="name" type="text" class="form-control my-3 is-valid" placeholder="Please enter your name"> -->
-        <!--
-        @if (register.get('name')?.errors && register.get('name')?.touched) {
-        <! -- Custom directive used for conditional rendering that checks if the form control has errors and if it has been touched -- >
-        <! -- <?.>: Null safety operator eliminates the need for explicit null checks before each property access or method call -- >
-        <div class="alert alert-danger">
-            <ul class="m-0"> <! -- Unordered list to display error messages -- >
-                <! -- Custom directives used for conditional rendering that checks if the form control has specific error -- >
-                @if(register.get('name')?.getError('required')){
-                <li>Input is required.</li>
-                }
-                @if(register.get('name')?.getError('minlength')){
-                <li>Input must be at least 10 characters.</li>
-                }
-                @if(register.get('name')?.getError('maxlength')){
-                <li>Input must not exceed 40 characters.</li>
-                }
-            </ul>
-        </div>
-        }
-        -->
         <app-alert-error [formName]="register" controlName="name" />
 
         <input [ngClass]="{
             'is-valid': !register.get('email')?.errors&&(register.get('email')?.touched||register.get('email')?.dirty),
             'is-invalid': register.get('email')?.errors&&(register.get('email')?.touched||register.get('email')?.dirty),
         }" formControlName="email" type="email" class="form-control my-3 is-valid" placeholder="Please enter your email">
-        <!-- <input formControlName="email" type="email" class="form-control my-3" placeholder="Please enter your email"> -->
-        <!--
-        @if (register.get('email')?.errors && register.get('email')?.touched) {
-        <div class="alert alert-danger">
-            <ul class="m-0">
-                @if(register.get('email')?.getError('required')){
-                <li>Input is required.</li>
-                }
-                @if(register.get('email')?.getError('email')){
-                <li>Please enter a valid email address.</li>
-                }
-            </ul>
-        </div>
-        }
-        -->
         <app-alert-error [formName]="register" controlName="email" />
 
         <input formControlName="password" type="password" class="form-control my-3"
             placeholder="Please enter your password">
-        <!--
-        @if (register.get('password')?.errors && register.get('password')?.touched) {
-        <div class="alert alert-danger">
-            <ul class="m-0">
-                @if(register.get('password')?.getError('required')){
-                <li>Input is required.</li>
-                }
-                @if(register.get('password')?.getError('pattern')){
-                <li>Please enter a password that matches the pattern.</li>
-                }
-            </ul>
-        </div>
-        }
-        -->
         <app-alert-error [formName]="register" controlName="password" />
 
         <input formControlName="rePassword" type="password" class="form-control my-3"
             placeholder="Please re-enter your password">
-        <!-- 
-        <! -- ISSUE ALERT: Error won't be displayed in case that the password and rePassword don't match -- >
-        @if (register.get('rePassword')?.errors && register.get('rePassword')?.touched) {
-        <div class="alert alert-danger">
-            <ul class="m-0">
-                @if(register.get('rePassword')?.getError('required')){
-                <li>Input is required.</li>
-                }
-                @if(register.get('rePassword')?.getError('pattern')){
-                <li>Please enter a password that matches the pattern.</li>
-                }
-            </ul>
-        </div>
-        }
-        -->
         <app-alert-error [formName]="register" controlName="rePassword" />
 
         <div class = "text-danger my-3">{{errorMessage}}</div>
 
-        <!-- <app-button>Register</app-button> --> <!-- Button Selector -->
-        <!-- Custom component that renders a button element with appropriate styling and functionality -->
         <button class="btn bg-main text-white" [disabled]="register.invalid">Register</button>
-        <!-- Button will be disabled if the <register> form is invalid, preventing the user from submitting the form until all required fields are valid and any validation rules are met -->
     </form>
 </div>

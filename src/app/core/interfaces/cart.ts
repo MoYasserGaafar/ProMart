@@ -1,6 +1,3 @@
-//These interfaces define the structure and properties of <Subcategory>, <Category>, <Brand>, <Products>, <Product>, <Data> and <Cart>.
-//These interfaces are used to represent and manage data related to these entities in the application.
-
 export interface Subcategory {
     _id: string;
     name: string;

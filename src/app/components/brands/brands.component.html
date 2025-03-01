@@ -1,14 +1,10 @@
 <div class="container my-5">
     <div class="row">
         @for (brand of allBrands; track $index) {
-        <!-- Looping through a list named <allBrands> where <brand> represents each item within the <allBrands> list during each iteration of the loop -->
-        <!-- <track $index>: Keeps track of the current index for each iteration -->
             <div class="col-md-2">
                 <div class="brand m-2 p-2">
                     <img [src]="brand.image" width="160px" height="150px" alt="">
-                    <!-- Dynamically sets the image source using property binding -->
                     <h6 class="fw-bold text-main text-center mt-2">{{brand.name}}</h6>
-                    <!-- Text interpolation is used to display the <brand.name> property of the current brand in the loop -->
                 </div>
             </div>
         }

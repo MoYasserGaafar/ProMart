@@ -17,9 +17,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { DetailsComponent } from './components/details/details.component';
 import { AddressComponent } from './components/address/address.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
-    //Specifies the URL path for this route and the component to be loaded when the URL matches the path.
     {
         //path: 'auth', component: AuthLayoutComponent, 
         path: '',
@@ -30,7 +30,6 @@ export const routes: Routes = [
 
         children: [
             { path: '', redirectTo: 'signin', pathMatch: 'full' }, 
-            //Indicates the default child route.
             { path: 'signin', component: SigninComponent, title: 'Sign In | ProMart' },
             { path: 'signup', component: SignupComponent, title: 'Sign Up | ProMart' },
             { path: 'forgotPassword', component: ForgotPasswordComponent, title: 'Forgot Password' }
@@ -42,12 +41,10 @@ export const routes: Routes = [
         path: '',
         component: MainLayoutComponent,
         canActivate: [authGuard],
-        //Defines an array of guards that must pass before the route can be activated.
-        //The <MainLayoutComponent> will be loaded for this route, but only if the <authGuard> returns true.
 
         children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
-            //Indicates the default child route.
+            { path: 'admin-dashboard', component: AdminDashboardComponent, title: 'Admin Dashboard | ProMart' },
             { path: 'home', component: HomeComponent, title: 'Home | ProMart' },
             { path: 'cart', component: CartComponent, title: 'Cart | ProMart' },
             { path: 'products', component: ProductsComponent, title: 'Products | ProMart' },
