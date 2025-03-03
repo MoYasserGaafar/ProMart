@@ -18,6 +18,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { AddressComponent } from './components/address/address.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AllUsersComponent } from './components/all-users/all-users.component';
+import { AllOrdersComponent } from './components/all-orders/all-orders.component';
 
 export const routes: Routes = [
     {
@@ -46,15 +48,18 @@ export const routes: Routes = [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'admin-dashboard', component: AdminDashboardComponent, title: 'Admin Dashboard | ProMart' },
             { path: 'home', component: HomeComponent, title: 'Home | ProMart' },
-            { path: 'cart', component: CartComponent, title: 'Cart | ProMart' },
             { path: 'products', component: ProductsComponent, title: 'Products | ProMart' },
             { path: 'product-details', component: ProductDetailsComponent, title: 'Product Details | ProMart' },
+            { path: 'details/:id', component: DetailsComponent, title: 'Product Details | ProMart' },
             { path: 'categories', component: CategoriesComponent, title: 'Categories | ProMart' },
             { path: 'brands', component: BrandsComponent, title: 'Brands | ProMart' },
-            { path: 'orders', component: OrdersComponent, title: 'Orders | ProMart' },
             { path: 'wishlist', component: WishlistComponent, title: 'Wishlist | ProMart' },
-            { path: 'details/:id', component: DetailsComponent, title: '' },
+            { path: 'cart', component: CartComponent, title: 'Cart | ProMart' },
+            { path: 'orders', component: OrdersComponent, title: 'Orders | ProMart' },
             { path: 'address/:id', component: AddressComponent, title: '' },
+            { path: 'admin-dashboard', component: AdminDashboardComponent, title: 'Admin Dashboard | ProMart' }, //Admin Dashboard
+            { path: 'admin-dashboard/all-users', component: AllUsersComponent, title: 'All Users | ProMart' }, //Admin Dashboard
+            { path: 'admin-dashboard/all-orders', component: AllOrdersComponent, title: 'All Orders | ProMart' }, //Admin Dashboard
         ]
     },
 

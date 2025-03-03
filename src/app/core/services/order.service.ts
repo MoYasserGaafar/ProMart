@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class OrderService {
   headers = { token: localStorage.getItem('token')! }
-
   constructor(private _HttpClient: HttpClient) { }
 
   checkoutSession = (cartId: string, shippingAddress: object): Observable<any> => {

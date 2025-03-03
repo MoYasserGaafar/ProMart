@@ -12,20 +12,28 @@
         </button>
 
         <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/home" routerLinkActive="navbar-active">{{"navbar.home"|translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/categories" routerLinkActive="navbar-active">{{"navbar.categories"|translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/brands" routerLinkActive="navbar-active">{{"navbar.brands"|translate}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/products" routerLinkActive="navbar-active">{{"navbar.products"|translate}}</a>
-                </li>
-            </ul>
+
+                <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+                    @if (!isAdminDashboard) {
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/home" routerLinkActive="navbar-active">{{"navbar.home"|translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/categories" routerLinkActive="navbar-active">{{"navbar.categories"|translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/brands" routerLinkActive="navbar-active">{{"navbar.brands"|translate}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/products" routerLinkActive="navbar-active">{{"navbar.products"|translate}}</a>
+                        </li>
+                    }
+                    @if (isAdminDashboard) {
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/admin-dashboard" routerLinkActive="navbar-active">{{"navbar.admin-dashboard"|translate}}</a>
+                        </li>
+                    }
+                </ul>
 
             <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
                 <!-- Language Nav Item -->
@@ -62,8 +70,7 @@
                 <!-- Cart Nav Item -->
                 @if (!isAdminDashboard) {
                     <li class="nav-item">
-                        <a class="nav-link position-relative" routerLink="/cart"
-                            routerLinkActive="navbar-active">{{"navbar.cart"|translate}}
+                        <a class="nav-link position-relative" routerLink="/cart" routerLinkActive="navbar-active">{{"navbar.cart"|translate}}
                             <i class="fa-solid fa-cart-shopping"></i> <!-- Fontawesome's Cart Shopping Icon -->
                             <!-- Bootstrap's Badge -->
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -74,12 +81,33 @@
                 }
 
                 <!-- Orders Nav Item -->
-                <li class="nav-item">
-                    <a class="nav-link position-relative" routerLink="/orders" routerLinkActive="navbar-active">{{"navbar.orders"|translate}}
-                        <i class="fa-solid fa-clock-rotate-left"></i> <!-- Fontawesome's Clock Rotate Left Icon -->
-                    </a>
-                </li>
+                @if (!isAdminDashboard) {
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" routerLink="/orders" routerLinkActive="navbar-active">{{"navbar.orders"|translate}}
+                            <i class="fa-solid fa-clock-rotate-left"></i> <!-- Fontawesome's Clock Rotate Left Icon -->
+                        </a>
+                    </li>
+                }
+
+                <!-- Users Nav Item -->
+                @if (isAdminDashboard) {
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" routerLink="admin-dashboard/all-users" routerLinkActive="navbar-active">{{"navbar.all-users"|translate}}
+                            <i class="fa-solid fa-users"></i> <!-- Fontawesome's Users Icon -->
+                        </a>
+                    </li>
+                }
+
+                <!-- Orders Nav Item -->
+                @if (isAdminDashboard) {
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" routerLink="admin-dashboard/all-orders" routerLinkActive="navbar-active">{{"navbar.all-orders"|translate}}
+                            <i class="fa-solid fa-clock-rotate-left"></i> <!-- Fontawesome's Clock Rotate Left Icon -->
+                        </a>
+                    </li>
+                }
                 
+                <!-- Logout Nav Item -->
                 <li class="nav-item">
                     <a class="nav-link" href="#" (click)="logout()" routerLinkActive="navbar-active">{{"navbar.logout"|translate}}</a>
                 </li>

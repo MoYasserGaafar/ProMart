@@ -12,6 +12,9 @@
         "wishlist": "Wishlist",
         "cart": "Cart",
         "orders": "Orders",
+        "admin-dashboard": "Dashboard",
+        "all-users": "All Users",
+        "all-orders": "All Orders",
         "logout": "Log Out"
     },
 
