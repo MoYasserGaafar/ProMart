@@ -1,6 +1,31 @@
 {
     "auth-navbar": {
-        "": ""
+        "signin": "Sign In",
+        "signup": "Sign Up",
+        "language": "English"
+    },
+
+    "signin": {
+        "header": "Log In to ProMart!",
+        "forgot-password": "Forgot Password?",
+        "login-btn": "Log In"
+    },
+
+    "signup": {
+        "header": "Register for ProMart!",
+        "register-btn": "Register"
+    },
+
+    "forgot-password": {
+        "forgot-header": "Forgot Password?",
+        "send-btn": "Send",
+        "verify-header": "Verify Reset Code",
+        "verify-btn": "Verify",
+        "reset-header": "Reset Password",
+        "reset-btn": "Reset",
+        "forgot-step": "Forgot Password",
+        "verify-step": "Verify Reset Code",
+        "reset-step": "Reset Password"
     },
 
     "navbar": {

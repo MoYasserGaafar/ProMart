@@ -4,11 +4,12 @@ import { AlertErrorComponent } from "../../shared/ui/alert-error/alert-error.com
 import { AuthService } from '../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [ReactiveFormsModule, AlertErrorComponent],
+  imports: [ReactiveFormsModule, AlertErrorComponent, TranslateModule],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss'
 })

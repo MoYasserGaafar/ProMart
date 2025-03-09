@@ -1,4 +1,33 @@
 {
+    "auth-navbar": {
+        "signin": "تسجيل الدخول",
+        "signup": "إنشاء حساب",
+        "language": "العربية"
+    },
+
+    "signin": {
+        "header": "تسجيل الدخول إلى ProMart!",
+        "forgot-password": "نسيت كلمة المرور؟",
+        "login-btn": "تسجيل الدخول"
+    },
+
+    "signup": {
+        "header": "سجل في ProMart!",
+        "register-btn": "إنشاء حساب"
+    },
+
+    "forgot-password": {
+        "forgot-header": "نسيت كلمة المرور؟",
+        "send-btn": "إرسال",
+        "verify-header": "تحقق من رمز الاستعادة",
+        "verify-btn": "تحقق",
+        "reset-header": "إعادة تعيين كلمة المرور",
+        "reset-btn": "إعادة تعيين",
+        "forgot-step": "نسيت كلمة المرور",
+        "verify-step": "تحقق من رمز الاستعادة",
+        "reset-step": "إعادة تعيين كلمة المرور"
+    },
+
     "navbar": {
         "home": "الرئيسية",
         "categories": "الفئات",

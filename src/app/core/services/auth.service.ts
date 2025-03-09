@@ -22,7 +22,7 @@ export class AuthService {
   signin = (user: any): Observable<any> => {
     console.log(user);
     
-    if (user.email === 'superadmin@gmail.com' && user.password === 'superadminpassword') {
+    if (user.email === 'superadmin@gmail.com' && user.password === 'SuperAdmin@Password25') {
       this.user = user;
       localStorage.setItem('user', JSON.stringify(user));
       return new Observable((observer) => {

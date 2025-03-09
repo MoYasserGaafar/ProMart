@@ -15,6 +15,7 @@
         }
         @if(formName.get(controlName)?.getError('pattern')){
         <li>Please enter a password that matches the pattern.</li>
+        <li>Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.</li>
         }
 
     </ul>
@@ -23,6 +24,7 @@
 <div class="alert alert-danger">
     <ul class="m-0">
         <li>Please enter a password that matches the pattern.</li>
+        <li>Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.</li>
     </ul>
 </div>
 }

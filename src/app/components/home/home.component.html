@@ -9,7 +9,7 @@
             <div class="product p-2">
                 <div [routerLink]="'/details/'+product._id">
                     <img [src]="product.imageCover" class="w-100" alt="">
-                    <h6 class="text-main mt-2">{{product.category.name|uppercase}}</h6> 
+                    <h6 class="text-main mt-2">{{product.category.name|uppercase}}</h6>
                     <h5 class="fw-bold">{{product.title.split(' ').slice(0,2).join(' ')|titlecase}}...</h5> 
                     <div class="d-flex justify-content-between">
                         <span>{{product.price|currency:'EGP'}}</span> 
@@ -18,7 +18,6 @@
                             {{product.ratingsAverage}}
                         </span>
                     </div>
-                    <p>{{product.createdAt|date:'short'}}</p> 
                     <p class="text-danger my-3">{{product.quantity|soldOut:50}}</p> 
                 </div>
                 <div class="d-flex justify-content-center align-items-center gap-2">

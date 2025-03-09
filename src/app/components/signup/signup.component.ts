@@ -8,11 +8,12 @@ import { NgClass } from '@angular/common';
 import { AuthService } from '../../core/services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ButtonComponent, ReactiveFormsModule, AlertErrorComponent, NgClass],
+  imports: [ButtonComponent, ReactiveFormsModule, AlertErrorComponent, NgClass, TranslateModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })

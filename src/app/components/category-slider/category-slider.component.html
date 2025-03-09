@@ -3,7 +3,6 @@
 
     <!-- npm >> <ngx-owl-carousel-o> Package >> <customOptions> -->
     <owl-carousel-o [options]="customOptions">
-
         @for(slide of categories; track $index) {
         <ng-container>
             <ng-template carouselSlide [id]="slide._id">

@@ -5,11 +5,12 @@ import { signupValidators } from '../../shared/validators/register.validators';
 import { AuthService } from '../../core/services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [AlertErrorComponent, ReactiveFormsModule, RouterLink],
+  imports: [AlertErrorComponent, ReactiveFormsModule, RouterLink, TranslateModule],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })

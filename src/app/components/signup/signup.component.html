@@ -1,5 +1,5 @@
 <div class="w-75 m-auto my-5">
-    <h2>Register for ProMart!</h2>
+    <h2>{{'signup.header'|translate}}</h2>
     <form [formGroup]="register" (ngSubmit)="sendData()">
         <input [ngClass]="{
             'is-valid': !register.get('name')?.errors&&(register.get('name')?.touched||register.get('name')?.dirty),
@@ -23,6 +23,6 @@
 
         <div class = "text-danger my-3">{{errorMessage}}</div>
 
-        <button class="btn bg-main text-white" [disabled]="register.invalid">Register</button>
+        <button class="btn bg-main text-white" [disabled]="register.invalid">{{'signup.register-btn'|translate}}</button>
     </form>
 </div>

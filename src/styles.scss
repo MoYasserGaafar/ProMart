@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel'; 
-//Imports the main stylesheet for the <ngx-owl-carousel-o> library.
-//It contains the base styles for the carousel component, such as its overall layout, structure, and default appearance.
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-//Imports the default theme stylesheet for the <ngx-owl-carousel-o> library. 
-//It contains the specific styling for the carousel's navigation dots, navigation arrows, and other elements, based on the default theme.
 @import 'ngx-toastr/toastr';
-//Imports the default theme stylesheet for the <ngx-toastr> library. 
-//It applies the styles defined by the library to the toast notifications that it creates.
 
 :root {
     --main-color: #FA7500;
@@ -133,6 +127,35 @@ a, a:hover {
     color:#fff;
 }
 
+.step-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.step {
+    border-radius: 10%;
+    text-align: center;
+    padding: 10px;
+    margin: 0 10px;
+    color: var(--light-color);
+    font-family: var(--font-family);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.step.active {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.step i {
+    display: block;
+    font-size: 24px;
+}
+
+
 //Selector targets the scrollbar itself
 ::-webkit-scrollbar {
     width: 10px;
@@ -159,4 +182,43 @@ a, a:hover {
 //Selector targets the track of the scrollbar, which is the area behind the thumb
 ::-webkit-scrollbar-track {
     background-color: #f0f3f2;
+}
+
+//Dark Mode Styles
+.dark-mode {
+    background-color: #1a1a1a !important;
+    color: white !important;
+}
+
+.dark-mode .navbar {
+    background-color: #222 !important;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .nav-link {
+    color: white !important;
+}
+
+.dark-mode .btn-outline-dark {
+    color: white !important;
+    border-color: white !important;
+}
+
+.dark-mode .btn-outline-dark:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+.navbar .dark-mode-toggle {
+    background-color: var(--main-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar .dark-mode-toggle:hover {
+    background-color: #ff5d00 !important;
+    color: white !important;
 }
